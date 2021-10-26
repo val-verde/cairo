@@ -370,7 +370,7 @@ if x11_dep.found() and xext_dep.found()
   prop_str = '@0@'.format(prop)
   if prop_str in ['true', 'false']
     ipc_rmid_deferred_release = (prop_str == 'true')
-    message('IPC_RMID_DEFERRED_RELEASE:', ipc_rmid_deferred_release)
+    message('IPC_RMID_DEFERRED_RELEASE:', prop_str)
   elif prop_str == 'auto'
     res = cc.run(files('meson-cc-tests/ipc_rmid_deferred_release.c'),
       dependencies: [x11_dep, xext_dep],

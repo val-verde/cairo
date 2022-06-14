@@ -59,6 +59,6 @@ foreach util : cairo_utils
   )
 endforeach
 
-if conf.get('CAIRO_HAS_DLSYM', 0) == 1 and cc.has_header('execinfo.h')
+if conf.get('CAIRO_HAS_DLSYM', 0) == 1 and cc.has_header('execinfo.h') and host_machine.system() != 'android'
   libmallocstats = library('malloc-stats', 'malloc-stats.c', dependencies : dl_dep)
 endif
